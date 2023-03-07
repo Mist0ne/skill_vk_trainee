@@ -1,6 +1,6 @@
-# skill veterans letters
+# skill vk trainee
 
-Скилл "Добрые письма пожилым"
+Скилл "Стажировка VK"
 https://vk.com/dev/marusia_skill_docs
 
 #### Install:
