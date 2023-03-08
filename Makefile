@@ -7,7 +7,7 @@ install: .make-install
 
 .make-install-pipenv:
 	@if ! which pipenv &> /dev/null; then \
-		pip install pipenv; \
+		pip3 install pipenv==2021.5.29; \
 	fi
 	@touch $@
 
