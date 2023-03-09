@@ -36,13 +36,16 @@ def handle_dialog(req):
     if flag:
         if 'error_count' in req['state']['session']:
             res['session_state'] = {'error_count': req['state']['session']['error_count'] + 1}
-            if req['state']['session']['error_count'] < 3:
-                res['response']['text'] = main_phrases.dont_understand['answer']
-                res['response']['tts'] = main_phrases.dont_understand['tts']
-            else:
-                res['response']['text'] = main_phrases.dont_understand_last_try['answer']
-                res['response']['tts'] = main_phrases.dont_understand_last_try['tts']
-                res['response']['end_session'] = True
+            # if req['state']['session']['error_count'] <= 3:
+            #     res['response']['text'] = main_phrases.dont_understand['answer']
+            #     res['response']['tts'] = main_phrases.dont_understand['tts']
+            # else:
+            #     res['response']['text'] = main_phrases.dont_understand_last_try['answer']
+            #     res['response']['tts'] = main_phrases.dont_understand_last_try['tts']
+            #     res['response']['end_session'] = True
+
+            res['response']['text'] = main_phrases.dont_understand['answer']
+            res['response']['tts'] = main_phrases.dont_understand['tts']
         else:
             res['session_state'] = {'error_count': 1}
             res['response']['text'] = main_phrases.dont_understand['answer']
